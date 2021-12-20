@@ -1,10 +1,25 @@
+<app-header-menu></app-header-menu>
+
+
 <div class="container">
   <h1>{{title}}</h1>
   <p>Bu sayfayı oluşturan: {{creator}}</p>
-  <input type="checkbox" [checked]="isChecked">Durum
+  <p>Yapılacak toplam iş: {{getIncompletedTaskCount()}}</p>
+  <div>
+      <input type="text" #taskName placeholder="Yapılacak iş" class="form-control">
+      <button class="btn btn-secondary" (click)="addNewItem(taskName.value)">Ekle</button>
+  </div>
+
+  <button class="btn" [ngClass]="isAllTaskShowing ? 'btn-success':'btn-warning' " (click)="filter()">
+    {{ getFilterButtonText() }}
+
+  </button>
   <div *ngFor="let item of items">
-    <div> <input type="checkbox" [(ngModel)]="item.isDone" name="" id=""> {{item.task}} 
-      <span class="badge bg-primary rounded-pill"> {{item.isDone ? "Yapıldı":"Yapılmadı"}}</span>
+    <div> <input type="checkbox" class="form-check-input" [(ngModel)]="item.isDone" name=""
+        id=""> {{item.task}}
+      <span [ngClass]="item.isDone ? 'bg-primary':'bg-danger'" class="badge rounded-pill">
+        {{item.isDone ? "Yapıldı":"Yapılmadı"}}
+      </span>
       <hr>
     </div>
   </div>
