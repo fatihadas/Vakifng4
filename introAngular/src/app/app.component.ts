@@ -11,9 +11,12 @@ export class AppComponent {
   creator : string = 'Türkay Ürkmez'
   isChecked: boolean = true;
 
-  items:string[] =[
-    'Fethiye','Eskişehir','İzmir'
+  items:TodoItem[] =[
+    new TodoItem("Dolar al", false),
+    new TodoItem("BTC al",true),
+    new TodoItem('Angular Öğren',false),
+    new TodoItem('Yurtdışı remote iş bul',false)
   ] 
 
-  item:TodoItem = new TodoItem('çiçek sula',false);
+  //item:TodoItem = new TodoItem('çiçek sula',false);
 }

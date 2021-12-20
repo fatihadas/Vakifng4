@@ -1,6 +1,11 @@
-<h1>{{title}}</h1>
-<p>Bu sayfayı oluşturan: {{creator}}</p>
-<input type="checkbox" [checked]="isChecked">Durum
-<ul *ngFor="let item of items">
-  <li>{{item}}</li>
-</ul>
+<div class="container">
+  <h1>{{title}}</h1>
+  <p>Bu sayfayı oluşturan: {{creator}}</p>
+  <input type="checkbox" [checked]="isChecked">Durum
+  <div *ngFor="let item of items">
+    <div> <input type="checkbox" [(ngModel)]="item.isDone" name="" id=""> {{item.task}} 
+      <span class="badge bg-primary rounded-pill"> {{item.isDone ? "Yapıldı":"Yapılmadı"}}</span>
+      <hr>
+    </div>
+  </div>
+</div>
