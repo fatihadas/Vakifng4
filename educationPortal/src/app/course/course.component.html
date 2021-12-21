@@ -1,1 +1,11 @@
-<p>course works!</p>
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title bg-primary text-white">{{course.title | titlecase}}</h3>
+        <p class="card-text">{{course.description | lowercase}}</p>
+        <p>{{course.rating | percent}}</p>
+        <div>
+           <app-comment-list [course]="course"></app-comment-list>
+        </div>
+    </div>
+
+</div>

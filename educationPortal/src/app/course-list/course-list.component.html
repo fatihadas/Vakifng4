@@ -1,1 +1,6 @@
-<p>course-list works!</p>
+<p>{{currentDate | date : 'short'}}</p>
+<div class="row" *ngFor="let course of courses" >
+    <div class="col-12"  >
+        <app-course [active]="course"></app-course>      
+    </div>
+</div>

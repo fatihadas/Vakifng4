@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from '../models/course.model';
+import { Courses } from '../models/mocks/courses.mock';
 
 @Component({
   selector: 'app-course-list',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseListComponent implements OnInit {
 
+  courses: Course[]= Courses;
+
   constructor() { }
+
+  currentDate: Date = new Date();
 
   ngOnInit(): void {
   }

@@ -1,1 +1,5 @@
-<p>comment-list works!</p>
+<div class="list-group" *ngFor="let comment of course.comments">
+
+    <a href="#" class="list-group-item list-group-item-action">{{comment.comment}}</a>
+
+</div>
