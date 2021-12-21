@@ -13,7 +13,7 @@ export class CourseListComponent implements OnInit {
 
   constructor() { }
 
-  currentDate: Date = new Date();
+  searchWord:string;
 
   ngOnInit(): void {
   }

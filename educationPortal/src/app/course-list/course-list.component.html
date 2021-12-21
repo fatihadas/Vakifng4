@@ -1,5 +1,9 @@
-<p>{{currentDate | date : 'short'}}</p>
-<div class="row" *ngFor="let course of courses" >
+
+<div>
+    <input type="text"  name="" [(ngModel)]="searchWord" class="form-control" placeholder="Ara" id="">
+</div>
+
+<div class="row m-3" *ngFor="let course of courses | searchCourse : searchWord" >
     <div class="col-12"  >
         <app-course [active]="course"></app-course>      
     </div>
