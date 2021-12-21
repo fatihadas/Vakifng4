@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Course } from '../models/course.model';
 import { Courses } from '../models/mocks/courses.mock';
 
@@ -11,11 +12,12 @@ export class CourseListComponent implements OnInit {
 
   courses: Course[]= Courses;
 
-  constructor() { }
+  constructor(private activeRoute: ActivatedRoute) { }
 
   searchWord:string;
 
   ngOnInit(): void {
+    this.activeRoute.params.subscribe(x=>console.log(x["categoryId"]));
   }
 
 }
